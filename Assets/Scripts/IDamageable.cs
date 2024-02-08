@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IDamageable : MonoBehaviour
+public interface IDamageable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public void TakeDamage(int damage);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
+
