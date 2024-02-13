@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavController : MonoBehaviour
 {
     private NavMeshAgent agent;
     public float margin = 0.1f;
+    public UnityEvent<float> OnPathingDistanceChanged;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,15 @@ public class NavController : MonoBehaviour
         if(Vector3.Distance(transform.position,target) > margin)
         {
             agent.SetDestination(target);
+        }
+    }
+
+    // Preupdate is called before the first frame update
+    void Update()
+    {
+        if(agent.remainingDistance != 0 && agent.speed != 0)
+        {
+            OnPathingDistanceChanged.Invoke(agent.remainingDistance);
         }
     }
 }
