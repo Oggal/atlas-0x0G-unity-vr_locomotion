@@ -73,3 +73,7 @@ crashlytics-build.properties
 .vscode/*
 Assets/TextMesh Pro.meta
 Assets/TextMesh Pro/*
+Assets/Models.meta
+Assets/Models
+Assets/FPS Hangar Environments.meta
+Assets/FPS Hangar Environments/*
