@@ -71,5 +71,16 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 .vscode/*
-Assets/FPS Hangar Environments/*
+Assets/TextMesh Pro.meta
+Assets/TextMesh Pro/*
+Assets/Models.meta
 Assets/Models
+Assets/FPS Hangar Environments.meta
+Assets/FPS Hangar Environments/*
+Assets/Hands.meta
+Assets/Hands/*
+Assets/Samples*
+Assets/XRI/*
+Assets/XR.meta
+Assets/XRI.meta
+Assets/XR/*
