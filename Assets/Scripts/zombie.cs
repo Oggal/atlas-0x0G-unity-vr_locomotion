@@ -65,6 +65,7 @@ public class zombie : MonoBehaviour
         navController.agent.isStopped = true;
         navController.agent.enabled = false;
         GetComponent<Collider>().enabled = false;
+        ZombieCounter.AddDeadZombie();
         Invoke("DestroyZombie", 30f);
     }
 
