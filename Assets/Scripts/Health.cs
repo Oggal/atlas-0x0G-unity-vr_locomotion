@@ -9,6 +9,7 @@ public class Health : MonoBehaviour, IDamageable
 
     public UnityEvent onDeath;
     public UnityEvent<int> onDamageTaken;
+    public UnityEvent<int> onHealthChanged;
 
     public void LateUpdate()
     {
@@ -17,16 +18,21 @@ public class Health : MonoBehaviour, IDamageable
             Die();
         }
     }
+    public void SetHealth(int newHealth)
+    {
+        health = newHealth;
+        onHealthChanged.Invoke(health);
+    }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
         onDamageTaken.Invoke(damage);
+        onHealthChanged.Invoke(health);
     }
 
     private void Die()
     {
         onDeath.Invoke();
-        Destroy(gameObject);
     }
 }
